@@ -4,4 +4,4 @@ Este documento se refiere a la información con respecto a RK4
 
 
 El módulo se encuentra en:
-[github.com](https://github.com/Esteban-Porras-UCR/Rk4)
+[github.com](https://github.com/Esteban-Porras-UCR/Tarea2)
