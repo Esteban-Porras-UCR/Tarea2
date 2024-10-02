@@ -13,9 +13,10 @@ def rk4(func, oper, state, h):
         h (numpy.float64): Fourth argument 
 
     Returns:
-        numpy.ndarray: Returns the sum of the `state`  
+       result (numpy.ndarray): Returns the sum of the `state`  
 
     """
+
     k1 = h * func(oper, state)
     k2 = h * func(oper, state + 0.5 * k1)
     k3 = h * func(oper, state + 0.5 * k2)
