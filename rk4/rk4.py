@@ -1,6 +1,6 @@
 def rk4(func, oper, state, h):
    
-    """Calculo de RK4.
+    """Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor y_n+1 y devolver este valor. 
 
     Examples:
         >>> rk4(a,b,c,d)
@@ -13,7 +13,7 @@ def rk4(func, oper, state, h):
         h (numpy.float64): Fourth argument 
 
     Returns:
-       result (numpy.ndarray): Returns the sum of the `state`  
+       result (numpy.ndarray): Retorna el valor de y_n+1 obtenido mediante el método Rk4  
 
     """
 
