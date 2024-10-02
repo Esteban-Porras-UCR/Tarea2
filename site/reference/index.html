@@ -391,8 +391,8 @@
 
 
 <h1 id="referencia">Referencia</h1>
-<p>Esta página contiene las referencias sobre las funciones <code>rk4()</code> y <code>dyn_generator()</code>
-La función Runge Kurta de rango 4 es la siguiente: </p>
+<p>Esta página contiene las referencias sobre las funciones <code>rk4()</code> y <code>dyn_generator()</code>.</p>
+<p>La función Runge Kurta de rango 4 es la siguiente: </p>
 
 
 <div class="doc doc-object doc-module">
@@ -425,12 +425,16 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
 
     <div class="doc doc-contents ">
 
-        <p>Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor y_n+1 y devolver este valor. </p>
+        <p>Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor <span class="arithmatex">\(y_{n+1}\)</span> y devolver este valor. </p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">rk4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
-<span class="go">7.0</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">oper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="mf">0.10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rk4</span><span class="p">(</span><span class="n">dyn</span><span class="p">,</span><span class="n">oper</span><span class="p">,</span><span class="n">state</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="go">[ [0.01381194+0.0j    0.0+0.11650741j]</span>
+<span class="go">  [0.0-0.11650741j    0.98618806+0.0j]   ]</span>
 </code></pre></div>
 
 
@@ -452,7 +456,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>First argument</p>
+                <p>Función a utilizar para obtener los k</p>
               </div>
             </td>
             <td>
@@ -466,7 +470,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Second argument</p>
+                <p>Matriz 2x2 que representa al operador</p>
               </div>
             </td>
             <td>
@@ -480,7 +484,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Third argument</p>
+                <p>Matriz 2x2 que representa al estado del sistema</p>
               </div>
             </td>
             <td>
@@ -494,7 +498,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Fourth argument </p>
+                <p>Variable con el valor del paso temporal</p>
               </div>
             </td>
             <td>
@@ -520,7 +524,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Retorna el valor de y_n+1 obtenido mediante el método Rk4</p>
+                <p>Retorna el valor del estado en el estado <span class="arithmatex">\(y_{n+1}\)</span> obtenido mediante el método Rk4</p>
               </div>
             </td>
           </tr>
@@ -553,22 +557,32 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">oper</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">oper</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor y_n+1 y devolver este valor. </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor $y_{n+1}$ y devolver este valor. </span>
 
 <span class="sd">    Examples:</span>
-<span class="sd">        &gt;&gt;&gt; rk4(a,b,c,d)</span>
-<span class="sd">        7.0</span>
+<span class="sd">        &gt;&gt;&gt; oper = np.array([0,1],[1,0])</span>
+<span class="sd">        &gt;&gt;&gt; state = np.array([1,0],[0,0])</span>
+<span class="sd">        &gt;&gt;&gt; h = 0.10</span>
+<span class="sd">        &gt;&gt;&gt; rk4(dyn,oper,state,h)</span>
+<span class="sd">        [ [0.01381194+0.0j    0.0+0.11650741j]</span>
+<span class="sd">          [0.0-0.11650741j    0.98618806+0.0j]   ]</span>
+
 
 <span class="sd">    Args:</span>
-<span class="sd">        func (función): First argument</span>
-<span class="sd">        oper (numpy.ndarray): Second argument</span>
-<span class="sd">        state (numpy.ndarray): Third argument</span>
-<span class="sd">        h (numpy.float64): Fourth argument </span>
+<span class="sd">        func (función): Función a utilizar para obtener los k</span>
+<span class="sd">        oper (numpy.ndarray): Matriz 2x2 que representa al operador</span>
+<span class="sd">        state (numpy.ndarray): Matriz 2x2 que representa al estado del sistema</span>
+<span class="sd">        h (numpy.float64): Variable con el valor del paso temporal</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">       result (numpy.ndarray): Retorna el valor de y_n+1 obtenido mediante el método Rk4  </span>
+<span class="sd">       result (numpy.ndarray): Retorna el valor del estado en el estado $y_{n+1}$ obtenido mediante el método Rk4  </span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -627,8 +641,11 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
 
 
 <p><span class="doc-section-title">Examples:</span></p>
-    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">rk4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-<span class="go">7.0</span>
+    <div class="highlight"><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">oper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rk4</span><span class="p">(</span><span class="n">oper</span><span class="p">,</span><span class="n">state</span><span class="p">)</span>
+<span class="go">[ [0.76703615-0.0j  0.0+0.64131106j]</span>
+<span class="go">  [0.0-0.64131106j -0.76703615+0.0j] ]</span>
 </code></pre></div>
 
 
@@ -650,7 +667,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>First argument</p>
+                <p>Matriz 2x2 que representa al operador</p>
               </div>
             </td>
             <td>
@@ -664,7 +681,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Second argument</p>
+                <p>Matriz 2x2 que representa el estado del sistema</p>
               </div>
             </td>
             <td>
@@ -690,7 +707,7 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Retorna el resultado del cálculo realizado</p>
+                <p>Retorna el resultado de <span class="arithmatex">\(f(t, \mathbf{y}) = -i[\mathbf{O}, \mathbf{y}(t)]\)</span></p>
               </div>
             </td>
           </tr>
@@ -716,20 +733,26 @@ La función Runge Kurta de rango 4 es la siguiente: </p>
 <span class="normal">15</span>
 <span class="normal">16</span>
 <span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dyn_generator</span><span class="p">(</span><span class="n">oper</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">dyn_generator</span><span class="p">(</span><span class="n">oper</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Se hace la conmutación de oper y state, ambos siendo operadores lineales,y se multiplica por i. Esta es la ecuación que determina el estado del sistema.</span>
 
 <span class="sd">    Examples:</span>
-<span class="sd">        &gt;&gt;&gt; rk4(a,b)</span>
-<span class="sd">        7.0</span>
+<span class="sd">        &gt;&gt;&gt; oper = np.array([0,1],[1,0])</span>
+<span class="sd">        &gt;&gt;&gt; state = np.array([1,0],[0,0])</span>
+<span class="sd">        &gt;&gt;&gt; rk4(oper,state)</span>
+<span class="sd">        [ [0.76703615-0.0j  0.0+0.64131106j]</span>
+<span class="sd">          [0.0-0.64131106j -0.76703615+0.0j] ]</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        oper (numpy.ndarray): First argument</span>
-<span class="sd">        state (numpy.ndarray): Second argument</span>
+<span class="sd">        oper (numpy.ndarray): Matriz 2x2 que representa al operador</span>
+<span class="sd">        state (numpy.ndarray): Matriz 2x2 que representa el estado del sistema</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        Resultado (numpy.ndarray): Retorna el resultado del cálculo realizado</span>
+<span class="sd">        Resultado (numpy.ndarray): Retorna el resultado de $f(t, \mathbf{y}) = -i[\mathbf{O}, \mathbf{y}(t)]$</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
