@@ -20,7 +20,7 @@
     
     
       
-        <title>Explanation - Documentación método Rk4</title>
+        <title>Explicación - Documentación método Rk4</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#explanation" class="md-skip">
+        <a href="#explicacion" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Explanation
+              Explicación
             
           </span>
         </div>
@@ -160,7 +160,7 @@
         
   
   <span class="md-ellipsis">
-    Welcome to MkDocs
+    Bienvenido a la documentación del método RK4
   </span>
   
 
@@ -180,7 +180,7 @@
         
   
   <span class="md-ellipsis">
-    Esta página contiene las referencias
+    Referencia
   </span>
   
 
@@ -209,7 +209,7 @@
         
   
   <span class="md-ellipsis">
-    Explanation
+    Explicación
   </span>
   
 
@@ -230,7 +230,7 @@
         
   
   <span class="md-ellipsis">
-    Esta página contiende tutoriales
+    Tutoriales
   </span>
   
 
@@ -272,8 +272,30 @@
                   
 
 
-<h1 id="explanation">Explanation</h1>
-<p>Esta página contiene explicaciones</p>
+<h1 id="explicacion">Explicación</h1>
+<p>En esta notación, <span class="arithmatex">\(y\)</span> corresponde a un estado del sistema. Este estado puede ser representado mediante diferentes objetos matemáticos: desde cantidades escalares hasta matrices que representan cierto operador lineal. En la ecuación anterior, <span class="arithmatex">\(t\)</span> corresponde a la variable temporal.</p>
+<p>Las ecuaciones del método numérico que vamos a utilizar son:</p>
+<div class="arithmatex">\[\begin{equation}
+y_{n+1} = \rightarrow y_n \frac{1}{6}(k_1 + k_2 + k_3 + k_4)
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+k_1 = hf(t,y)
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+k_2 = hf( t + \frac{h}{2}, y + \frac{k_1}{2})
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+k_3 = hf( t + \frac{h}{2}, y + \frac{k_2}{2})
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+k_4 = hf(t + h, y +k_3)
+\end{equation}\]</div>
+<p>Armados con esta metodología vamos a estudiar la solución de un problema dinámico genérico.</p>
+<p>Asumamos que queremos estudiar la evolución temporal de un estado <span class="arithmatex">\(\mathbf{y}(t)\)</span>. Este estado será representado mediante una matriz 2x2 que corresponde a algún operador lineal. La función que genra la dinámica del problema es
+$$
+f(t, \mathbf{y}) = -{\rm{i}} [\mathbf{O}, \mathbf{y}(t)],
+$$
+donde <span class="arithmatex">\(\mathbf{O}\)</span> es otro operador lineal, <span class="arithmatex">\({\rm{i}}\)</span> es la constante compleja y <span class="arithmatex">\([A, B] = AB - BA\)</span> es un operación de conmutación. Note que <strong>la función <span class="arithmatex">\(f(t, \mathbf{y})\)</span> no depende explícitamente de la variable temporal</strong>.</p>
 
 
 
