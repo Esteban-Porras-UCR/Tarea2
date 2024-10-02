@@ -8,5 +8,6 @@ Para esto, se crean dos arreglos que van a contener los valores con valores inic
 
 Se empieza con el for y se guardan las variables en sus respectivos "espacios", y el valor obtenido de `rk4()` se reemplza por el $y_{n}$ de esta manera, en la siguiente iteración, el operador de esta iteración se convierte en el inicial de la siguiente iteración
 
+La siguiente gráfica es un resultado obtenido mediante estas funciones:
 
 ![Gráfica del sistema](images/Grafica.png)
