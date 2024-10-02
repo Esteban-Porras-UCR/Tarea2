@@ -2,6 +2,10 @@ site_name: Documentación método Rk4
 
 theme:
   name: "material"
+  palette:
+    primary: teal
+    scheme: slate
+    accent: cyan
 
 nav:
   - index.md
