@@ -11,7 +11,7 @@ def dyn_generator(oper, state):
         state (numpy.ndarray): Second argument
 
     Returns:
-        Resultado (numpy.ndarray): retorna el resultado del cálculo realizado
+        Resultado (numpy.ndarray): Retorna el resultado del cálculo realizado
 
     """
 
