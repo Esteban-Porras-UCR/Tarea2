@@ -1,6 +1,8 @@
 #Referencia
 
-Esta página contiene las referencias sobre las funciones `rk4()` y `dyn_generator()`
+Esta página contiene las referencias sobre las funciones `rk4()` y `dyn_generator()`.
+
+
 La función Runge Kurta de rango 4 es la siguiente: 
 
 ::: rk4.rk4

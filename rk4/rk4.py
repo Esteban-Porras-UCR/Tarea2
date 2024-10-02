@@ -1,19 +1,24 @@
 def rk4(func, oper, state, h):
    
-    """Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor y_n+1 y devolver este valor. 
+    """Calculo de las ecuaciones de Runge-Kutta orden 4, mediante definir los valores de k1, k2, k3 y k4 para posterior calcular el valor $y_{n+1}$ y devolver este valor. 
 
     Examples:
-        >>> rk4(a,b,c,d)
-        7.0
+        >>> oper = np.array([0,1],[1,0])
+        >>> state = np.array([1,0],[0,0])
+        >>> h = 0.10
+        >>> rk4(dyn,oper,state,h)
+        [ [0.01381194+0.0j    0.0+0.11650741j]
+          [0.0-0.11650741j    0.98618806+0.0j]   ]
+        
 
     Args:
-        func (función): First argument
-        oper (numpy.ndarray): Second argument
-        state (numpy.ndarray): Third argument
-        h (numpy.float64): Fourth argument 
+        func (función): Función a utilizar para obtener los k
+        oper (numpy.ndarray): Matriz 2x2 que representa al operador
+        state (numpy.ndarray): Matriz 2x2 que representa al estado del sistema
+        h (numpy.float64): Variable con el valor del paso temporal
 
     Returns:
-       result (numpy.ndarray): Retorna el valor de y_n+1 obtenido mediante el método Rk4  
+       result (numpy.ndarray): Retorna el valor del estado en el estado $y_{n+1}$ obtenido mediante el método Rk4  
 
     """
 
