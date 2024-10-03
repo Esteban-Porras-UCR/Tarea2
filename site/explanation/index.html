@@ -281,10 +281,11 @@
 
 
 <h1 id="explicacion">Explicación</h1>
-<p>En esta notación, <span class="arithmatex">\(y\)</span> corresponde a un estado del sistema. Este estado puede ser representado mediante diferentes objetos matemáticos: desde cantidades escalares hasta matrices que representan cierto operador lineal. En la ecuación anterior, <span class="arithmatex">\(t\)</span> corresponde a la variable temporal.</p>
+<p>En esta parte se explicará el problema que intentamos resolver.</p>
+<p>El problema que estamos resolviendo es el de un sistema dado por una función <span class="arithmatex">\(f(t,y)\)</span>. Sin embargo en este caso usamos una función que no depende del tiempo de manera explícita. Por lo que las funciones realizadas solo corresponden a este caso. Las ecuaciones a utilizar son las siguientes, donde  <span class="arithmatex">\(y\)</span> corresponde a un estado del sistema. Este estado puede ser representado mediante diferentes objetos matemáticos: desde cantidades escalares hasta matrices que representan cierto operador lineal.</p>
 <p>Las ecuaciones del método numérico que vamos a utilizar son:</p>
 <div class="arithmatex">\[\begin{equation}
-y_{n+1} = \rightarrow y_n \frac{1}{6}(k_1 + k_2 + k_3 + k_4)
+y_{n+1} =  y_n \frac{1}{6}(k_1 + k_2 + k_3 + k_4)
 \end{equation}\]</div>
 <div class="arithmatex">\[\begin{equation}
 k_1 = hf(t,y)
@@ -298,7 +299,6 @@ k_3 = hf( t + \frac{h}{2}, y + \frac{k_2}{2})
 <div class="arithmatex">\[\begin{equation}
 k_4 = hf(t + h, y +k_3)
 \end{equation}\]</div>
-<p>Armados con esta metodología vamos a estudiar la solución de un problema dinámico genérico.</p>
 <p>Asumamos que queremos estudiar la evolución temporal de un estado <span class="arithmatex">\(\mathbf{y}(t)\)</span>. Este estado será representado mediante una matriz 2x2 que corresponde a algún operador lineal. La función que genra la dinámica del problema es
 $$
 f(t, \mathbf{y}) = -{\rm{i}} [\mathbf{O}, \mathbf{y}(t)],
