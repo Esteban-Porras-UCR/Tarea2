@@ -186,7 +186,7 @@
         
   
   <span class="md-ellipsis">
-    Referencia
+    Referencias
   </span>
   
 
@@ -279,10 +279,10 @@
 
 
 <h1 id="tutoriales">Tutoriales</h1>
-<p>Para empezar a trabajar se deben asignar los valores del operador y del estado inicial del sistema, en el tiempo <span class="arithmatex">\(t=0s\)</span>. Luego, con las funciones se evalua la dinámica temporal en una grilla temporal unidimensional. se crea un linespace para reccorer una lista de valores y obtiene el valor de la variable de paso temporal. Y se crea una rutina para realizar la evolución temporal. </p>
-<p>Pero antes se necesir¿ta una copia del operador que representa el estado inicial. Se llama de manera iterativa la rutina <code>rk4()</code>, calculando el operador del estado del sistema <span class="arithmatex">\(\mathbf{y}(t)\)</span> a través del tiempo. A travéz del tiempo, se guarda la entrada <span class="arithmatex">\((0, 0)\)</span> y <span class="arithmatex">\((1, 1)\)</span> de la matriz <span class="arithmatex">\(\mathbf{y}(t)\)</span>. </p>
+<p>Para empezar a trabajar se deben asignar los valores del operador y del estado inicial del sistema, en el tiempo <span class="arithmatex">\(t=0s\)</span>. Luego, con las funciones se evalua la dinámica temporal en una grilla temporal unidimensional. Se crea un linespace para recorrer una lista de valores y obtiene el valor de la variable de paso temporal. Y se crea una rutina para realizar la evolución temporal. </p>
+<p>Pero antes se necesita una copia del operador que representa el estado inicial. Se llama de manera iterativa la rutina <code>rk4()</code> mediante un for loop, calculando el operador del estado del sistema <span class="arithmatex">\(\mathbf{y}(t)\)</span> a través del tiempo. Los resultados obtenidos, se guardan en las entradas <span class="arithmatex">\((0, 0)\)</span> y <span class="arithmatex">\((1, 1)\)</span> de la matriz <span class="arithmatex">\(\mathbf{y}(t)\)</span>. </p>
 <p>Para esto, se crean dos arreglos que van a contener los valores con valores iniciales cero. Se utiliza el mismo tamaño del arreglo que contiene la variable independiente temporal. </p>
-<p>Se empieza con el for y se guardan las variables en sus respectivos "espacios", y el valor obtenido de <code>rk4()</code> se reemplza por el <span class="arithmatex">\(y_{n}\)</span> de esta manera, en la siguiente iteración, el operador de esta iteración se convierte en el inicial de la siguiente iteración</p>
+<p>Se empieza con el for y se guardan las variables en sus respectivos "espacios", y el valor obtenido de <code>rk4()</code> se remplaza por el <span class="arithmatex">\(y_{n}\)</span> de esta manera, en la siguiente iteración, el operador de esta iteración se convierte en el inicial de la siguiente iteración.</p>
 <p>La siguiente gráfica es un resultado obtenido mediante estas funciones:</p>
 <p><img alt="Gráfica del sistema" src="../images/Grafica.png" /></p>
 

@@ -196,7 +196,7 @@
         
   
   <span class="md-ellipsis">
-    Referencia
+    Referencias
   </span>
   
 
@@ -280,7 +280,7 @@
 
 <h1 id="bienvenido-a-la-documentacion-del-metodo-rk4">Bienvenido a la documentación del método RK4</h1>
 <p>Este documento se refiere a la información con respecto al cálculo de un sistema dinámico usando el método de Runge-Kutta de orden 4.</p>
-<p>Los sistemas dinámicos son modelos de suma importancia en las ciencias. En general, un modelo dinámico intenta resolver la trayectoria temporal de alguna cantidad física como función de algún generador dinámico; este último usualmente representado de forma funcional.</p>
+<p>Los sistemas dinámicos son modelos que describen el movimiento o comportamiento de un sistema bajo ciertas condiciones. Este último usualmente representado de forma funcional.</p>
 <p>En algunos casos, podemos modelar la dinámica de un estado genérico <span class="arithmatex">\(y\)</span> mediante la ecuación dinámica
 \begin{equation}
 \frac{dy}{dt} = f(t, y),
@@ -289,6 +289,8 @@ sujeta a la condición inicial
 \begin{equation}
 y(t_0) = y_0.
 \end{equation}</p>
+<p>En este caso trabajo con un sistema de la forma <span class="arithmatex">\(f(t, \mathbf{y}) = -{\rm{i}} [\mathbf{O}, \mathbf{y}(t)]\)</span>. Con el detalle que la función <span class="arithmatex">\(f(t, \mathbf{y})\)</span> no depende explícitamente de la variable temporal.</p>
+<p>Se utilizó el método de Runge-Kurtta de orden 4, para resolver este problema. La explicación de este método y del sistema se encuentran en Explicación y Referencias. </p>
 <p>El módulo se encuentra en:
 <a href="https://github.com/Esteban-Porras-UCR/Tarea2">github.com</a></p>
 
