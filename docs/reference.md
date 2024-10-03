@@ -1,4 +1,4 @@
-#Referencia
+#Referencias
 
 Esta página contiene las referencias sobre las funciones `rk4()` y `dyn_generator()`.
 
